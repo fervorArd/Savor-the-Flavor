@@ -100,7 +100,7 @@ router.get('/reset/:token', (req, res) => {
 router.post('/reset/:token', reset_password);
 
 //Displaying favorites
-router.get('/myfavorites', (req, res) => {
+router.get('/myfavorites', ensureAuthenticated, (req, res) => {
   User.findOne({_id: req.user}, function(err, user){
     if(err){
       req.flash('error_msg', 'User not found');
@@ -135,6 +135,9 @@ router.get('/add-to-favorite/:id', (req, res) => {
           req.flash('success_msg', 'Added to favorites');
           res.redirect('/shop/menu');
         });
+      }else{
+        req.flash('error_msg', 'You are not Logged In.');
+        return res.redirect('/shop/menu');
       }
     });
   });
@@ -145,8 +148,8 @@ router.get('/remove-from-favorite/:id', (req, res) => {
   User.updateOne({_id: req.user}, {$pull: {favorite_list: {_id: id}}}, function(err, result){
     if(err) console.log(err);
   });
-  req.flash('Removed item from favorites.');
-  return res.redirect('/user/myfavorites');
+  req.flash('success_msg', 'Removed item from favorites.');
+  res.redirect('/user/myfavorites');
 });
 
 module.exports = router;

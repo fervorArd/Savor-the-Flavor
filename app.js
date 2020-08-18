@@ -52,7 +52,7 @@ app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
-  // res.locals.login = req.ensureAuthenticated;
+  res.locals.login = req.isAuthenticated();
   res.locals.session = req.session;
   next();
 });
