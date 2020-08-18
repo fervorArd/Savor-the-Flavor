@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 module.exports = {
   sendmail: function(to_addr, subject, body){
 
-    const from_addr = "restaurantapp8530@gmail.com", sender_password = "lur8tlur8t";
+    const from_addr = "from_addr@gmail.com", sender_password = "password";
 
     let transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",

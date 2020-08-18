@@ -33,8 +33,8 @@ module.exports = {
           port: 587,
           secure: false,
           auth: {
-            user: 'restaurantapp8530@gmail.com',
-            pass: 'lur8tlur8t',
+            user: 'from_addr@gmail.com',
+            pass: 'password',
           },
           tls: {
             rejectUnathorized: false
@@ -43,7 +43,7 @@ module.exports = {
 
         var mailOptions = {
           to: user.email,
-          from: '"Restaurant App" <restaurantapp8530@gmail.com>',
+          from: '"Restaurant App" <from_addr@gmail.com>',
           subject: 'Reset Password Request',
           text: `You are receiving this because you have requested the reset of the password.
           \nPlease click on the following link, or paste this into your browser to complete the process.
