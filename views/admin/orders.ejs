@@ -1,0 +1,50 @@
+<h3>Orders</h3>
+
+<%- include ('../partials/messages'); %>
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="row"></th>
+      <th scope="col">Orders</th>
+      <th scope="col">User</th>
+      <th scope="col">Address</th>
+      <th scope="col">Status</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Placed at</th>
+    </tr>
+  </thead>
+
+  <% orders.forEach((order) => { %>
+  <thead>
+    <tr>
+      <th scope="row"></th>
+      <td>
+        <ul class="list-group">
+          <% Object.keys(order.cart.items).forEach(function(key) { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= order.cart.items[key].item.title %> | <%= order.cart.items[key].qty %> Units
+              <span class="badge badge-primary badge-pill"><%= order.cart.items[key].price %></span>
+            </li>
+          <% }); %>
+        </ul>
+      </td>
+      <td><%= order.name %></td>
+      <td><%= order.address %></td>
+      <td>
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Placed
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">Confirmed</a>
+            <a class="dropdown-item" href="#">Prepared</a>
+            <a class="dropdown-item" href="#">Delivered</a>
+            <a class="dropdown-item" href="#">Completed</a>
+          </div>
+        </div>
+      </td>
+      <td><%= order.cart.totalPrice %></td>
+    </tr>
+  </thead>
+  <% }); %>
+</table>

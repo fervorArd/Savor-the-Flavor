@@ -1,0 +1,33 @@
+<h3>Products</h3>
+<a href="/admin/add-product">
+  <button type="button" class="btn btn-primary" name="button">Add a Products</button>
+</a>
+
+<%- include ('../partials/messages'); %>
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="row"></th>
+      <th scope="col">Product</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col">Product Image</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+
+  <% products.forEach((product) => { %>
+  <thead>
+    <tr>
+      <th scope="row"></th>
+      <td><%= product.title %></td>
+      <td><%= product.price %></td>
+      <td><%= product.category %></td>
+      <td><img width="100" height="100" src="<%= product.imagePath %>" alt=""></td>
+      <td><a href="#">Edit</a></td>
+      <td><a href="#">Delete</a></td>
+    </tr>
+  </thead>
+  <% }); %>
+</table>

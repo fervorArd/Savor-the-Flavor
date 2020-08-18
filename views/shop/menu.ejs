@@ -1,0 +1,24 @@
+<%- include ('../partials/messages'); %>
+
+<% products.forEach((product) => { %>
+  <div class="container-fluid">
+    <div class="row">
+      <% product.forEach((item) => { %>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <div class="thumbnail">
+            <img src="<%= item.imagePath %>" class="img-responsive" alt="...">
+            <div class="caption">
+              <h3><%= item.title %></h3>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <div class="clearfix">
+                <div class="price pull-left">Rs.<%= item.price %></div>
+                <a href="/user/add-to-favorite/<%= item._id %>" id="heart"><i class="fa fa-heart-o ml-1 favorite" aria-hidden="true"></i></a>
+                <a href="/shop/add-to-cart/<%= item._id %>" class="btn btn-success pull-right" role="button">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+<% }); %>
