@@ -5,6 +5,7 @@ const ProductSchema = new mongoose.Schema({
   cart: {type: Object, required:  true},
   address: {type: String, required: true},
   name: {type: String, required: true},
+  date: {type: Date, default: Date.now},
   paymentId: {type: String, required: true}
 });
 
