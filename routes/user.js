@@ -32,7 +32,6 @@ router.post('/login',
   }), (req, res, next) => {
     if(req.session.oldUrl && req.session.oldUrl !== '/user/account'){
       var oldUrl = req.session.oldUrl;
-      console.log(oldUrl);
       req.session.oldUrl = null;
       res.redirect(oldUrl);
     }else{
@@ -70,7 +69,7 @@ router.get('/my-orders', ensureAuthenticated, (req, res)=>{
       req.flash('error_msg', err);
       res.redirect('/shop/menu');
     }
-  });
+  }).sort({ date: -1 });
 });
 
 //Logout handle

@@ -4,7 +4,13 @@ const Product = require('../models/product');
 const Order = require('../models/orders');
 var { addProduct } = require('../controllers/add_product');
 var { editProduct } = require('../controllers/edit_product');
+const { adminLogin } = require('../config/auth');
 var ObjectId = require('mongodb').ObjectID;
+const moment = require('moment');
+
+router.use('/', adminLogin, function(req, res, next){
+  next();
+});
 
 router.get('/products', (req, res) => {
   Product.find(function(err, data){
@@ -40,11 +46,11 @@ router.get('/delete-product/:id', (req, res) => {
 router.get('/orders', (req, res) => {
   Order.find(function(err, orders){
     if(orders){
-      res.render('admin/orders', { orders: orders });
+      res.render('admin/orders', { orders: orders, moment: moment });
     }else{
       res.render('admin/orders', { orders: null });
     }
-  });
+  }).sort({ date: -1 });
 });
 
 module.exports = router;
