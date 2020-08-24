@@ -31,16 +31,26 @@
         <td><%= order.name %></td>
         <td><%= order.address %></td>
         <td>
-          <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Placed
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Confirmed</a>
-              <a class="dropdown-item" href="#">Prepared</a>
-              <a class="dropdown-item" href="#">Delivered</a>
-              <a class="dropdown-item" href="#">Completed</a>
-            </div>
+          <div class="inline-block relative w-64">
+              <form action="/admin/order/status" method="POST">
+                  <input type="hidden" name="orderId" value="${ order._id }">
+                  <select name="status" onchange="this.form.submit()"
+                      class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded focus:outline-none focus:shadow-outline">
+                      <option value="order_placed"
+                          ${ order.status === 'order_placed' ? 'selected' : '' }>
+                          Placed</option>
+                      <option value="confirmed" ${ order.status === 'confirmed' ? 'selected' : '' }>
+                          Confirmed</option>
+                      <option value="prepared" ${ order.status === 'prepared' ? 'selected' : '' }>
+                          Prepared</option>
+                      <option value="delivered" ${ order.status === 'delivered' ? 'selected' : '' }>
+                          Delivered
+                      </option>
+                      <option value="completed" ${ order.status === 'completed' ? 'selected' : '' }>
+                          Completed
+                      </option>
+                  </select>
+              </form>
           </div>
         </td>
         <td><%= order.cart.totalPrice %></td>

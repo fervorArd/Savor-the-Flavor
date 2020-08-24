@@ -1,7 +1,37 @@
-/* red #b4342b black #0c0d0e brown #642120
-purple #b797a5 grey #2f292b dark purple #776b84
-dark green #776b84 light green #71863e
-darker green #222d27 dark grey #323847 bluish #5b9bd1*/
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link{
+  color: #FE4066;
+}
+
+.navbar-brand{
+  color: #FE4066;
+  font-family: 'Cookie', cursive;
+  /* font-size: 40px; */
+}
+
+.form-group label{
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1{
+  font-family: 'Merriweather', serif;
+}
+
+.login, .register, .update{
+  background: #FE4066;
+  color: #fff;
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+}
+
+p{
+  font-family: 'Merriweather', serif;
+}
+
 #parallax-image{
   background-image: url(/images/beetroot.jpg);
   height: 100vh;

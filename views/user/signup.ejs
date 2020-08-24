@@ -1,13 +1,13 @@
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
-    <div class="card card-body">
+    <div class="card card-body shadow-lg p-3 mb-5 bg-white rounded p-4">
       <h1 class="text-center mb-3">
         <i class="fa fa-user-plus"></i> Sign up
       </h1>
       <%- include ('../partials/messages'); %>
       <form action="/user/signup" method="POST">
         <div class="form-group">
-          <label for="name">Mobile Number</label>
+          <label for="name"><i class="fa fa-phone" aria-hidden="true" style="color: #FE4066;"></i>&nbsp; Mobile Number</label>
           <input
             type="mobile_number"
             id="mobile_number"
@@ -18,7 +18,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="name"><i class="fa fa-user-circle" aria-hidden="true" style="color: #FE4066;"></i>&nbsp; Name</label>
           <input
             type="name"
             id="name"
@@ -29,7 +29,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email"><i class="fa fa-envelope" aria-hidden="true" style="color: #FE4066;"></i>&nbsp; Email</label>
           <input
             type="email"
             id="email"
@@ -40,7 +40,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password2"><i class="fa fa-key" aria-hidden="true" style="color: #FE4066;"></i>&nbsp; Password</label>
           <input
             type="password"
             id="password"
@@ -51,7 +51,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="password2">Confirm Password</label>
+          <label for="password2"><i class="fa fa-key" aria-hidden="true" style="color: #FE4066;"></i>&nbsp; Confirm Password</label>
           <input
             type="password"
             id="password2"
@@ -61,7 +61,7 @@
             value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
           />
         </div>
-        <button type="submit" class="btn btn-primary btn-block">
+        <button type="submit" class="btn btn-block register">
           Register
         </button>
       </form>

@@ -1,12 +1,12 @@
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
-    <div class="card card-body">
+    <div class="card card-body shadow-lg p-3 mb-5 bg-white rounded p-4">
       <h1 class="text-center mb-3"><i class="fa fa-sign-in" aria-hidden="true"></i>
   Login</h1>
       <%- include ('../partials/messages'); %>
       <form action="/user/login" method="POST">
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email"><i class="fa fa-envelope" aria-hidden="true" style="color: #FE4066;"></i>&nbsp; Email</label>
           <input
             type="email"
             id="email"
@@ -16,7 +16,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password"><i class="fa fa-key" aria-hidden="true" style="color: #FE4066;"></i>&nbsp; Password</label>
           <input
             type="password"
             id="password"
@@ -25,12 +25,12 @@
             placeholder="Enter Password"
           />
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <button type="submit" class="btn btn-block login">Login</button>
+        <a href="/user/forgot-password" class="float-right" style="font-family: 'Noto Sans JP', sans-serif;">Forgot Password?</a>
       </form>
       <p class="lead mt-4">
         No Account? <a href="/user/signup">Sign up</a>
       </p>
-      <a href="/user/forgot-password">Forgot Password?</a>
     </div>
   </div>
 </div>

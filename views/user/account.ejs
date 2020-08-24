@@ -1,49 +1,53 @@
-<form action="/user/account" method="POST" enctype="multipart/form-data">
-  <div class="profile-userpic">
-    <img class="rounded-circle" width="120px" height="120px" src="<%= imagePath  %>" alt="">
-    <div class="media-body">
-      <h2 class="account-heading"><%= name %></h2>
-      <p class="text-secondary"><%= email %></p>
-    </div>
+<div class="row mt-5">
+  <div class="col-md-6 m-auto card p-4">
+    <%- include ('../partials/messages'); %>
+    <form action="/user/account" method="POST" enctype="multipart/form-data">
+      <div class="profile-userpic row">
+        <img class="rounded-circle col-sm-4" width="140px" height="140px" src="<%= imagePath  %>" alt="">
+        <div class="col pt-4">
+          <h1 class="account-heading"><%= name %></h1>
+          <p class="text-secondary"><%= email %></p>
+        </div>
+      </div>
+      <legend class="border-bottom mb-4 mt-2" style="font-family: 'Noto Sans JP', sans-serif;">Account Info</legend>
+      <div class="form-group">
+        <label for="name">Mobile Number</label>
+        <input
+          type="number"
+          id="mobile_number"
+          name="mobile_number"
+          class="form-control"
+          placeholder="Enter Mobile Number"
+          value="<%= typeof mobile_number != 'undefined' ? mobile_number : '' %>"
+        />
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="name"
+          id="name"
+          name="name"
+          class="form-control"
+          placeholder="Enter Name"
+          value="<%= typeof name != 'undefined' ? name : '' %>"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          placeholder="Enter Email"
+          value="<%= typeof email != 'undefined' ? email : '' %>"
+        />
+      </div>
+      <div class="form-group">
+        <label for="profile-pic">Example file input</label>
+        <input type="file" name="profile-pic" class="form-control-file" id="profile-pic">
+      </div>
+      <button type="submit" class="btn btn-block update">Update</button>
+    <form>
   </div>
-  <%- include ('../partials/messages'); %>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" name="profile-pic" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-  <legend class="border-bottom mb-4">Account Info</legend>
-  <div class="form-group">
-    <label for="name">Mobile Number</label>
-    <input
-      type="number"
-      id="mobile_number"
-      name="mobile_number"
-      class="form-control"
-      placeholder="Enter Mobile Number"
-      value="<%= typeof mobile_number != 'undefined' ? mobile_number : '' %>"
-    />
-  </div>
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input
-      type="name"
-      id="name"
-      name="name"
-      class="form-control"
-      placeholder="Enter Name"
-      value="<%= typeof name != 'undefined' ? name : '' %>"
-    />
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      class="form-control"
-      placeholder="Enter Email"
-      value="<%= typeof email != 'undefined' ? email : '' %>"
-    />
-  </div>
-  <button type="submit" class="btn btn-primary">Update</button>
-<form>
+</div>

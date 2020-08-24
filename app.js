@@ -53,6 +53,7 @@ app.use((req, res, next) => {
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
   res.locals.login = req.isAuthenticated();
+  res.locals.user = req.user;
   res.locals.session = req.session;
   next();
 });

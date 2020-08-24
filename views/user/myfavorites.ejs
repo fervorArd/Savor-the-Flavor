@@ -4,7 +4,7 @@
   <% favorite_list.forEach((item) => { %>
     <div class="container-fluid">
       <div class="row">
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <div class="col-xs-4 col-sm-12 col-md-4 col-lg-4">
             <div class="thumbnail">
               <img src="<%= item.imagePath %>" class="img-responsive" alt="...">
               <div class="caption">
@@ -12,7 +12,7 @@
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 <div class="clearfix">
                   <div class="price pull-left">Rs.<%= item.price %></div>
-                  <a href="/user/remove-from-favorite/<%= item._id %>"><i class="fa fa-heart ml-1 favorite" style="color: green;" aria-hidden="true"></i></a>
+                  <a href="/user/remove-from-favorite/<%= item._id %>"><i class="fa fa-heart ml-1 favorite" style="color: #5cb85c;" aria-hidden="true"></i></a>
                   <a href="/add-to-cart/<%= item._id %>" class="btn btn-success pull-right" role="button">Add to Cart</a>
                 </div>
               </div>

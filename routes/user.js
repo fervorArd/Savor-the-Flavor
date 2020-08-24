@@ -34,8 +34,10 @@ router.post('/login',
       var oldUrl = req.session.oldUrl;
       req.session.oldUrl = null;
       res.redirect(oldUrl);
-    }else{
+    }else if(!req.user.isAdmin){
       res.redirect('/user/account');
+    }else{
+      res.redirect('/admin/orders');
     }
 });
 
@@ -149,6 +151,10 @@ router.get('/remove-from-favorite/:id', (req, res) => {
   });
   req.flash('success_msg', 'Removed item from favorites.');
   res.redirect('/user/myfavorites');
+});
+
+router.get('/currentorder', (req, res) => {
+  res.render('user/currentorder');
 });
 
 module.exports = router;

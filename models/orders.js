@@ -6,6 +6,7 @@ const ProductSchema = new mongoose.Schema({
   address: {type: String, required: true},
   name: {type: String, required: true},
   date: {type: Date, default: Date.now},
+  status: {type: String, default: 'order_placed'},
   paymentId: {type: String, required: true}
 });
 
