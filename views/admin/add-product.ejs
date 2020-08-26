@@ -8,8 +8,8 @@
     <div class="card card-body">
       <%- include ('../partials/messages'); %>
       <form action="/admin/add-product" method="POST">
-        <div class="form-group">
-          <label for="name">Title</label>
+        <div class="form-group required">
+          <label for="name" class="control-label">Title</label>
           <input
             type="text"
             id="title"
@@ -18,8 +18,8 @@
             value="<%= typeof title != 'undefined' ? title : '' %>"
           />
         </div>
-        <div class="form-group">
-          <label for="name">Description</label>
+        <div class="form-group required">
+          <label for="name" class="control-label">Description</label>
           <textarea
             type="textarea"
             id="description"
@@ -28,8 +28,8 @@
             value="<%= typeof description != 'undefined' ? description : '' %>"
           ></textarea>
         </div>
-        <div class="form-group">
-          <label for="email">Category</label>
+        <div class="form-group required">
+          <label for="email" class="control-label">Category</label>
           <input
             type="text"
             id="category"
@@ -38,8 +38,8 @@
             value="<%= typeof category != 'undefined' ? category : '' %>"
           />
         </div>
-        <div class="form-group">
-          <label for="password">Price</label>
+        <div class="form-group required">
+          <label for="password" class="control-label">Price</label>
           <input
             type="text"
             id="price"
@@ -48,8 +48,8 @@
             value="<%= typeof price != 'undefined' ? price : '' %>"
           />
         </div>
-        <div class="form-group">
-          <label for="password2">Image</label>
+        <div class="form-group required">
+          <label for="password2" class="control-label">Image</label>
           <input
             type="text"
             id="imagePath"

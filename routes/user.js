@@ -12,6 +12,7 @@ const { reset_password } = require('../controllers/reset_password');
 const { ensureAuthenticated } = require('../config/auth');
 const csurf = require('csurf');
 var ObjectId = require('mongodb').ObjectID;
+const moment = require('moment');
 
 var csrfProtection = csurf({ cookie: true });
 
@@ -63,7 +64,7 @@ router.get('/my-orders', ensureAuthenticated, (req, res)=>{
         cart = new Cart(order.cart);
         order.items = cart.generateArray();
       });
-      res.render('user/my-orders', { orders: orders });
+      res.render('user/my-orders', { orders: orders, moment: moment });
     }else{
       res.render('user/my-orders', { orders: null });
     }
