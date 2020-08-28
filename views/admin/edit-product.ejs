@@ -1,12 +1,11 @@
+<%- include ('../partials/messages'); %>
 <h3>Edit a Product</h3>
 <a href="/admin/products">
   <button type="button" class="btn btn-primary" name="button">Back to Products</button>
 </a>
-
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body">
-      <%- include ('../partials/messages'); %>
       <form action="/admin/edit-product/<%= id  %>" method="POST">
         <div class="form-group">
           <label for="name">Title</label>

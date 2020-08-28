@@ -9,9 +9,9 @@ const { sendmail } = require('../controllers/sendEmail');
 router.get('/menu', (req, res)=>{
   Product.find(function(err, data){
     var productChunks = [];
-    var chunkSie = 3;
-    for(var i=0; i<data.length; i+=chunkSie){
-      productChunks.push(data.slice(i, i+chunkSie));
+    var chunkSize = 3;
+    for(var i=0; i<data.length; i+=chunkSize){
+      productChunks.push(data.slice(i, i+chunkSize));
     }
     res.render('shop/menu', { products: productChunks });
   });
@@ -27,6 +27,20 @@ router.get('/add-to-cart/:id', (req, res) => {
     req.session.cart = cart;
     req.flash('success_msg', 'Added to the Cart.');
     res.redirect('/shop/menu');
+  });
+});
+
+
+router.get('/add-to-cart-from-favorite/:id', (req, res) => {
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart? req.session.cart : {});
+
+  Product.findById(productId, function(err, product){
+    if(err) return res.redirect('/shop/menu');
+    cart.add(product, product.id);
+    req.session.cart = cart;
+    req.flash('success_msg', 'Added to the Cart.');
+    res.redirect('/user/myfavorites');
   });
 });
 

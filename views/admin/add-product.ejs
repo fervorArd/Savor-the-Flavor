@@ -1,12 +1,11 @@
+<%- include ('../partials/messages'); %>
 <h3>Add a Product</h3>
 <a href="/admin/products">
   <button type="button" class="btn btn-primary" name="button">Back to Products</button>
 </a>
-
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body">
-      <%- include ('../partials/messages'); %>
       <form action="/admin/add-product" method="POST">
         <div class="form-group required">
           <label for="name" class="control-label">Title</label>

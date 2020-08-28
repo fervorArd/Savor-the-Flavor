@@ -1,5 +1,4 @@
 <%- include ('../partials/messages'); %>
-
 <% if(favorite_list){ %>
   <% favorite_list.forEach((item) => { %>
     <div class="container-fluid">
@@ -11,12 +10,10 @@
                 <h3><%= item.title %></h3>
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 <div class="clearfix">
-                  <div class="price pull-left">Rs.<%= item.price %></div>
+                  <div class="price pull-left">&#x20B9; <%= item.price %></div>
                   <a href="/user/remove-from-favorite/<%= item._id %>"><i class="fa fa-heart ml-1 favorite" style="color: #5cb85c;" aria-hidden="true"></i></a>
-                  <a href="/add-to-cart/<%= item._id %>" class="btn btn-success pull-right" role="button">Add to Cart</a>
+                  <a href="/shop/add-to-cart-from-favorite/<%= item._id %>" class="btn btn-success float-right">Add to Cart</a>
                 </div>
-              </div>
-            </div>
           </div>
       </div>
     </div>
