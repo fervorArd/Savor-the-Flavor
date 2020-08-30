@@ -12,7 +12,7 @@ module.exports = {
     Product.updateOne({ _id: id }, newvalues, (err, product) => {
       if (err) throw err;
       req.flash('success_msg', 'Product details has been updated.');
-      res.redirect(`${id}`);
+      res.redirect('/admin/products');
     });
   }
 }
