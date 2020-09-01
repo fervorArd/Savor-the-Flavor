@@ -64,6 +64,12 @@ app.use('/user', require('./routes/user'));
 app.use('/shop', require('./routes/shop'));
 app.use('/admin', require('./routes/admin'));
 
+app.use((req, res, next) => {
+  res.status(404).render('errors/404');
+  res.status(500).render('errors/500');
+  res.status(403).render('errors/403');
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server has been started on ${PORT}`));
