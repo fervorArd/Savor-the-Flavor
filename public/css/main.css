@@ -3,12 +3,41 @@ body{
   padding: 0;
 }
 
+
+.content-section{
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* Navbar  */
+.nav-link{
+  color: #FE4066;
+}
+
+.nav-link:hover, .navbar-brand:hover{
+  color: white;
+}
+
+.navbar-brand{
+  color: #FE4066;
+  font-family: 'Cookie', cursive;
+  font-size: 35px;
+  padding: 0;
+}
+
 /* Home */
+.home{
+  position: relative;
+}
+
 .home-title{
   font-family: 'Cookie', cursive;
   font-weight: bolder;
   position: absolute;
-  top: 130px;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -17,7 +46,7 @@ body{
 .para{
   font-weight: bolder;
   position: absolute;
-  top: 200px;
+  top: 140px;
   left: 50%;
   transform: translateX(-40%);
   color: white;
@@ -25,7 +54,7 @@ body{
 
 .home-btn{
   position: absolute;
-  top: 280px;
+  top: 225px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -80,52 +109,41 @@ body{
   margin-top: 40px;
 }
 
-.content-section{
-  background: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
-}
-
-.nav-link{
-  color: #FE4066;
-}
-
-.navbar-brand{
-  color: #FE4066;
-  font-family: 'Cookie', cursive;
-  /* font-size: 40px; */
+/* Form */
+.form-group.required .control-label:after{
+  content: "*";
+  color: red;
 }
 
 .form-group label{
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+/* Headers and Paragraph */
 h1{
   font-family: 'Merriweather', serif;
-}
-
-.login, .register, .update{
-  background: #FE4066;
-  color: #fff;
-  font-family: 'Merriweather', serif;
-  /* font-size: 20px; */
 }
 
 p{
   font-family: 'Merriweather', serif;
 }
 
-#parallax-image{
-  background-image: url(/images/beetroot.jpg);
-  height: 100vh;
-  margin-bottom: 50px;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
+h3, th, .btn{
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
+td{
+  font-family: 'Merriweather', serif;
+}
+
+/* Buttons */
+.login, .register, .update{
+  background: #FE4066;
+  color: #fff;
+  font-family: 'Merriweather', serif;
+}
+
+/* Contact */
 .map-container iframe{
   left:0;
   top:0;
@@ -177,23 +195,9 @@ p{
   font-size: 14px;
 }
 
-
-.form-group.required .control-label:after{
-  content: "*";
-  color: red;
-}
-
 .track-delivery{
   width: 80px;
   height: 80px;
-}
-
-h3, th, .btn{
-  font-family: 'Noto Sans JP', sans-serif;
-}
-
-td{
-  font-family: 'Merriweather', serif;
 }
 
 /* Step progress bar */
@@ -229,3 +233,13 @@ td{
     line-height: 1.428571429;
     border-radius: 15px;
     margin-top: 0; }
+
+.favorite-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+footer{
+  color: #dfdfe5;
+}
