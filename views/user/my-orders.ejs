@@ -1,34 +1,36 @@
-<% if(orders){ %>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <h3 style="font-family: 'Merriweather', serif;">My Orders</h3>
-      <hr>
-      <% orders.forEach((order) => { %>
-        <table class="table table-striped">
-        <p class="mt-4"><span style="font-weight: bold;">Order ID: </span> <%= order._id %></p>
-        <p><span style="font-weight: bold;">Order date: </span><%= moment(order.date).format('DD-MM-YYYY,  hh:mm A') %><span style="font-weight: bold;" class="float-right">Amt: &#x20B9;<%= order.cart.totalPrice %></span></p>
-        <thead>
-          <tr>
-            <th scope="col">ITEM</th>
-            <th scope="col">QUANTITY</th>
-            <th scope="col">PRICE</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% order.items.forEach((i) => { %>
-           <tr>
-             <td><%= i.item.title %></td>
-             <td><%= i.qty %></td>
-             <td>&#x20B9; <%= i.price %></td>
-           </tr>
-          <% }); %>
-        </tbody>
-        </table>
+<div class="content-section">
+  <% if(orders){ %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3 style="font-family: 'Merriweather', serif;">My Orders</h3>
         <hr>
-      <% }); %>
+        <% orders.forEach((order) => { %>
+          <table class="table table-striped">
+          <p class="mt-4"><span style="font-weight: bold;">Order ID: </span> <%= order._id %></p>
+          <p><span style="font-weight: bold;">Order date: </span><%= moment(order.date).format('DD-MM-YYYY,  hh:mm A') %><span style="font-weight: bold;" class="float-right">Amt: &#x20B9;<%= order.cart.totalPrice %></span></p>
+          <thead>
+            <tr>
+              <th scope="col">ITEM</th>
+              <th scope="col">QUANTITY</th>
+              <th scope="col">PRICE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% order.items.forEach((i) => { %>
+             <tr>
+               <td><%= i.item.title %></td>
+               <td><%= i.qty %></td>
+               <td>&#x20B9; <%= i.price %></td>
+             </tr>
+            <% }); %>
+          </tbody>
+          </table>
+          <hr>
+        <% }); %>
+      </div>
     </div>
-  </div>
-<% } else {  %>
-  <h2 class="text-center mt-4" style="font-family: 'Noto Sans JP', sans-serif;">No Orders Found. &#128577;</h2>
-  <p class="text-center">You haven't ordered anything yet.<br>To order now go to the menu.</p>
-<% } %>
+  <% } else {  %>
+    <h2 class="text-center mt-4" style="font-family: 'Noto Sans JP', sans-serif;">No Orders Found. &#128577;</h2>
+    <p class="text-center">You haven't ordered anything yet.<br>To order now go to the menu.</p>
+  <% } %>
+</div>
